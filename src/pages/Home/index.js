@@ -18,22 +18,29 @@ const Home = () => {
 
     return (
         <div>
-            <SearchForm onSumbit={onSubmit}/>
-            <div className="App-main">
-                <div className="App-results">
-                    <h3 className="App-title">Última búsqueda</h3>
-                    <div className="App-content-gifs">
-                        {
-                            loading
-                                ?
-                                <i>Cargando ... ⏳</i>
-                                :
-                                <ListOfGifs gifs={gifs} />
-                        }
+            <header className="o-header">
+                <SearchForm onSumbit={onSubmit} />
+            </header>
+            <br />
+            <div className="App-wrapper">
+                <div className="App-main">
+                    <div className="App-results">
+                        <h5 className="App-title">
+                            🔍 Última búsqueda
+                        </h5>
+                        <div className="App-content-gifs">
+                            {
+                                loading
+                                    ?
+                                    <i>Cargando ... ⏳</i>
+                                    :
+                                    <ListOfGifs gifs={gifs} />
+                            }
+                        </div>
                     </div>
-                </div>
-                <div className="App-category">
-                    <TrendingSearches />
+                    <div className="App-category">
+                        <TrendingSearches />
+                    </div>
                 </div>
             </div>
         </div>

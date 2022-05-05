@@ -13,17 +13,17 @@ const SearchResults = ({ params }) => {
     const { loading, gifs, setPage } = useGifs({ keyword });
     const externalRef = useRef();
     const { show } = useNearScreen({
-        externalRef : loading ? null : externalRef,
-        once : false 
+        externalRef: loading ? null : externalRef,
+        once: false
     });
-    
+
     const handleNextPage = () => setPage(prevPage => prevPage + 1);
 
-    const debounceHandleNextPage = useCallback(debounce(handleNextPage, 200),[]);
+    const debounceHandleNextPage = useCallback(debounce(handleNextPage, 200), []);
 
     useEffect(() => {
-        if(show) debounceHandleNextPage();
-    },[show, debounceHandleNextPage])
+        if (show) debounceHandleNextPage();
+    }, [show, debounceHandleNextPage])
 
     return (
         <>
@@ -33,9 +33,12 @@ const SearchResults = ({ params }) => {
                     <i>Cargando ... ⏳</i>
                     :
                     <>
-                        <h3 className="App-title">
-                            {decodeURI(keyword)}
-                        </h3>
+                        <h5 className="App-title">
+                            🔍 Resultados de la búsqueda:
+                            <span style={{ color: '#E401FB' }}>
+                                &nbsp;"{decodeURI(keyword)}"
+                            </span>
+                        </h5>
                         <ListOfGifs
                             gifs={gifs}
                         />

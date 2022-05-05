@@ -4,14 +4,16 @@ import { Link } from "wouter";
 const Category = ({ name, options = [] }) => {
 
     return <>
-        <h3>{ name }</h3>
+        <h5 className="App-title">
+            ⚡{name}⚡
+        </h5>
         {
             options.map(popularGif => {
-                return <span key={popularGif}>
-                    <Link to={`/search/${popularGif}`}>
+                return <p style={{ margin: 0}} key={popularGif}>
+                    <Link style={{ fontSize: '17px', fontWeight: 'bold'}} to={`/search/${popularGif}`}>
                         {popularGif} &nbsp;
                     </Link>
-                </span>
+                </p>
             })
         }
     </>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import './styles.css';
+
 const SearchForm = ({ onSumbit }) => {
 
     const [keyword, setKeyword] = useState('');
@@ -14,9 +16,9 @@ const SearchForm = ({ onSumbit }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <button>Buscar</button>
-            <input onChange={handleChange} placeholder='Search a gif here ...' type='text' value={keyword} />
+        <form className="c-search" onSubmit={handleSubmit}>
+            <button className="btn">Buscar</button>
+            <input className="c-search-input" onChange={handleChange} placeholder='Search a gif here ...' type='text' value={keyword} />
         </form>
     )
 }
