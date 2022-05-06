@@ -6,7 +6,7 @@ const TrendingSearches = () => {
 
     const { trends } = useTrends();
 
-    return <Category name='Tendencias' options={trends} />
+    return <Category name='Trends' options={trends} />
 }
 
 export default TrendingSearches;

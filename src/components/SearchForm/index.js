@@ -17,8 +17,8 @@ const SearchForm = ({ onSumbit }) => {
 
     return (
         <form className="c-search" onSubmit={handleSubmit}>
-            <button className="btn">Buscar</button>
-            <input className="c-search-input" onChange={handleChange} placeholder='Search a gif here ...' type='text' value={keyword} />
+            <button className="btn">Search</button>
+            <input className="c-search-input" onChange={handleChange} placeholder='...' type='text' value={keyword} />
         </form>
     )
 }

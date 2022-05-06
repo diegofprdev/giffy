@@ -1,9 +1,11 @@
 import React, { useCallback } from "react";
 import { useLocation } from 'wouter';
+import Helmet from "react-helmet";
 
 import { useGifs } from "../../hooks/useGifs";
 
 import SearchForm from "../../components/SearchForm";
+import Spinner from "../../components/Spinner"
 import ListOfGifs from "../../components/ListOfGifs";
 import TrendingSearches from "../../components/TrendingSearches/index";
 
@@ -18,6 +20,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home | Giffy</title>
+            </Helmet>
             <header className="o-header">
                 <SearchForm onSumbit={onSubmit} />
             </header>
@@ -26,13 +31,13 @@ const Home = () => {
                 <div className="App-main">
                     <div className="App-results">
                         <h5 className="App-title">
-                            🔍 Última búsqueda
+                            🔍 Last search
                         </h5>
                         <div className="App-content-gifs">
                             {
                                 loading
                                     ?
-                                    <i>Cargando ... ⏳</i>
+                                    <Spinner />
                                     :
                                     <ListOfGifs gifs={gifs} />
                             }

@@ -1,0 +1,16 @@
+.Category {
+    margin: 10px;
+}
+
+.Category-text {
+    color: var(--brand-color_1);
+    background-color: var(--brand-color_3);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 5px;
+}
+
+.Category-text:hover {
+    color: var(--brand-color_3);
+    background-color: var(--brand-color_1);
+}

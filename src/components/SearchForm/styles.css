@@ -11,4 +11,12 @@
     font-size: 16px;
     border: none;
     padding: 4px 16px;
+    color: var(--brand-color_3);
+    font-weight: bold;
+}
+
+.c-search-input:focus {
+    outline: none !important;
+    border-color: var(--brand-color_6);
+    box-shadow: 0 0 10px var(--brand-color_6);
 }

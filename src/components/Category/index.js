@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "wouter";
 
+import './styles.css';
+
 const Category = ({ name, options = [] }) => {
 
     return <>
         <h5 className="App-title">
-            ⚡{name}⚡
+            🔥{name}🔥
         </h5>
         {
             options.map(popularGif => {
-                return <p style={{ margin: 0}} key={popularGif}>
-                    <Link style={{ fontSize: '17px', fontWeight: 'bold'}} to={`/search/${popularGif}`}>
-                        {popularGif} &nbsp;
+                return <p className="Category" key={popularGif}>
+                    <Link className="Category-text" to={`/search/${popularGif}`}>
+                        {popularGif}
                     </Link>
                 </p>
             })

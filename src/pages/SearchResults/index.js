@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useCallback } from "react";
+import Helmet from "react-helmet";
 
 import debounce from "just-debounce-it";
 
 import { useGifs } from "../../hooks/useGifs";
 import { useNearScreen } from "../../hooks/useNearScreen";
 
+import Spinner from "../../components/Spinner";
 import ListOfGifs from "../../components/ListOfGifs";
 
 const SearchResults = ({ params }) => {
@@ -30,11 +32,14 @@ const SearchResults = ({ params }) => {
             {
                 loading
                     ?
-                    <i>Cargando ... ⏳</i>
+                    <Spinner />
                     :
                     <>
+                        <Helmet>
+                            <title>Results of {decodeURI(keyword)} | Giffy</title>
+                        </Helmet>
                         <h5 className="App-title">
-                            🔍 Resultados de la búsqueda:
+                            🔍 Search result:
                             <span style={{ color: '#E401FB' }}>
                                 &nbsp;"{decodeURI(keyword)}"
                             </span>
