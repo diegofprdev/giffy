@@ -7,12 +7,13 @@ import { useGifs } from "../../hooks/useGifs";
 import { useNearScreen } from "../../hooks/useNearScreen";
 
 import Spinner from "../../components/Spinner";
+import SearchForm from "../../components/SearchForm";
 import ListOfGifs from "../../components/ListOfGifs";
 
 const SearchResults = ({ params }) => {
 
-    const { keyword } = params;
-    const { loading, gifs, setPage } = useGifs({ keyword });
+    const { keyword, rating = 'g' } = params;
+    const { loading, gifs, setPage } = useGifs({ keyword, rating });
     const externalRef = useRef();
     const { show } = useNearScreen({
         externalRef: loading ? null : externalRef,
@@ -38,6 +39,13 @@ const SearchResults = ({ params }) => {
                         <Helmet>
                             <title>Results of {decodeURI(keyword)} | Giffy</title>
                         </Helmet>
+                        <header className="o-header">
+                            <SearchForm 
+                                initianKeyword={keyword}
+                                initialRating={rating}
+                            />
+                        </header>
+                        <br />
                         <h5 className="App-title">
                             🔍 Search result:
                             <span style={{ color: '#E401FB' }}>

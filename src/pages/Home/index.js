@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import { useLocation } from 'wouter';
 import Helmet from "react-helmet";
 
 import { useGifs } from "../../hooks/useGifs";
@@ -11,12 +10,7 @@ import TrendingSearches from "../../components/TrendingSearches/index";
 
 const Home = () => {
 
-    const [path, setPath] = useLocation();
     const { loading, gifs } = useGifs();
-
-    const onSubmit = useCallback(({ keyword }) => {
-        setPath(`/search/${keyword}`);
-    }, [setPath])
 
     return (
         <div>
@@ -24,14 +18,14 @@ const Home = () => {
                 <title>Home | Giffy</title>
             </Helmet>
             <header className="o-header">
-                <SearchForm onSumbit={onSubmit} />
+                <SearchForm />
             </header>
             <br />
             <div className="App-wrapper">
                 <div className="App-main">
                     <div className="App-results">
                         <h5 className="App-title">
-                            🔍 Last search
+                            🕵️ Last search
                         </h5>
                         <div className="App-content-gifs">
                             {

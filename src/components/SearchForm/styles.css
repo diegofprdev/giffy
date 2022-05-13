@@ -20,3 +20,51 @@
     border-color: var(--brand-color_6);
     box-shadow: 0 0 10px var(--brand-color_6);
 }
+
+.c-search-list {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--brand-color_3);
+    color: #fff;
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0;
+    line-height: 1.3;
+    margin: 0;
+    max-width: 100%;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%;
+    background-size: .65em auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.c-search-list:hover {
+    background: var(--brand-color_6);
+    cursor: pointer;
+}
+
+.c-search-list:focus {
+    outline: none !important;
+    border-color: var(--brand-color_6);
+    box-shadow: 0 0 10px var(--brand-color_6);
+}
+
+.c-search-list-option {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.c-search-counter {
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--brand-color_1);
+}

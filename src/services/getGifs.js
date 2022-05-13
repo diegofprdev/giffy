@@ -1,8 +1,8 @@
 import { API_KEY, API_URL_BASE } from './settings';
 
-const getGifs = ({ keyword = 'pandas', limit = 10, page = 0 } = {}) => {
+const getGifs = ({ keyword = 'pandas', limit = 10, page = 0, rating } = {}) => {
 
-    const urlApi = `${API_URL_BASE}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=g&lang=en`;
+    const urlApi = `${API_URL_BASE}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=${rating}&lang=en`;
 
     return fetch(urlApi)
         .then(res => res.json())

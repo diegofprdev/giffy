@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'wouter'
+import { Route, Link } from 'wouter'
 import './App.css';
 
 import { GifsContextProvider } from './contexts/GifsContext';
@@ -15,13 +15,15 @@ function App() {
     <div className="App">
       <section className="App-content">
         <figure className='App-logo'>
-          <Logo />
+          <Link to='/'>
+            <Logo />
+          </Link>
         </figure>
         <GifsContextProvider>
           <Route path='/' component={Home} />
-          <Route path='/search/:keyword' component={SearchResults} />
+          <Route path='/search/:keyword/:rating?' component={SearchResults} />
           <Route path='/gif/:id' component={Detail} />
-          <Route path='/404' component={NotFound}/>
+          <Route path='/404' component={NotFound} />
         </GifsContextProvider>
       </section>
     </div>

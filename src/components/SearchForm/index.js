@@ -1,24 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation } from 'wouter';
+
+import { RATINGS } from '../../services/getRatings';
+
+import { useForm } from "./hooks/useForm";
 
 import './styles.css';
 
-const SearchForm = ({ onSumbit }) => {
+const SearchForm = ({ initianKeyword = '', initialRating = 'g' }) => {
 
-    const [keyword, setKeyword] = useState('');
+    const [path, setPath] = useLocation();
+
+    const { keyword, rating, times, updateKeyword, updateRating } = useForm({ initianKeyword, initialRating });
 
     const handleChange = (e) => {
-        setKeyword(e.target.value);
+        updateKeyword(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSumbit({ keyword });
+        setPath(`/search/${keyword}/${rating}`);
+    }
+
+    const handleChangeRating = (e) => {
+        updateRating(e.target.value);
     }
 
     return (
         <form className="c-search" onSubmit={handleSubmit}>
-            <button className="btn">Search</button>
-            <input className="c-search-input" onChange={handleChange} placeholder='...' type='text' value={keyword} />
+            <button className="btn">🔍 Search</button>
+            <input
+                className="c-search-input"
+                onChange={handleChange}
+                placeholder='...'
+                type='text'
+                value={keyword}
+            />
+            <select
+                className="c-search-list"
+                onChange={handleChangeRating}
+                value={rating}>
+                {
+                    RATINGS.map(({ rating, emoji }) => {
+                        return <option className="c-search-list-option" key={rating} value={rating}>
+                            {rating} {emoji}
+                        </option>
+                    })}
+            </select>
+            <span className="c-search-counter">{times}</span>
         </form>
     )
 }

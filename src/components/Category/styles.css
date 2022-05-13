@@ -1,16 +1,31 @@
-.Category {
+.Categories {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
     margin: 10px;
 }
 
+.Category {
+    margin: 0px;
+    border: 2px solid var(--brand-color_3);
+    box-shadow: 0 0 10px var(--brand-color_6);
+    cursor: pointer;
+}
+
+.Category:hover {
+    border: 2px solid var(--brand-color_1);
+    box-shadow: 0 0 10px var(--brand-color_1);
+}
+
 .Category-text {
-    color: var(--brand-color_1);
-    background-color: var(--brand-color_3);
+    color: var(--brand-color_3);
     font-size: 16px;
     font-weight: bold;
     padding: 5px 5px;
+    display: block;
 }
 
 .Category-text:hover {
-    color: var(--brand-color_3);
-    background-color: var(--brand-color_1);
+    color: var(--brand-color_1);
 }
+
