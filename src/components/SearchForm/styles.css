@@ -68,3 +68,29 @@
     font-weight: bold;
     color: var(--brand-color_1);
 }
+
+@media screen and (max-width: 520px) {
+    #btn-search span {
+        display: none;
+    }
+    #btn-search::after {
+        content: "🔍";
+    }
+    .c-search-counter {
+        display: none;
+    }
+    .c-search-input {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .c-search-list {
+        width: 60px;
+    }
+
+    .c-search-list, .c-search-input, .btn {
+        font-size: 14px;
+    }
+}
+

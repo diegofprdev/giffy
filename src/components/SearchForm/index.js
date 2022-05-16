@@ -28,7 +28,9 @@ const SearchForm = ({ initianKeyword = '', initialRating = 'g' }) => {
 
     return (
         <form className="c-search" onSubmit={handleSubmit}>
-            <button className="btn">🔍 Search</button>
+            <button id="btn-search" className="btn">
+                <span>🔍 Search</span>
+            </button>
             <input
                 className="c-search-input"
                 onChange={handleChange}
