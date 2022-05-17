@@ -4,6 +4,7 @@ import './App.css';
 
 import { GifsContextProvider } from './contexts/GifsContext';
 
+import Header from './components/Header';
 import Logo from './components/Logo'
 import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
+        <Header />
         <figure className='App-logo'>
           <Link to='/'>
             <Logo />

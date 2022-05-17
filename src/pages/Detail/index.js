@@ -6,6 +6,7 @@ import { useSingleGif } from "../../hooks/useSingleGif";
 
 import Spinner from '../../components/Spinner';
 import Gif from '../../components/Gif';
+import ButtonsRoundedNav from '../../components/ButtonsRoundedNav'
 
 const Detail = ({ params }) => {
 
@@ -37,6 +38,9 @@ const Detail = ({ params }) => {
             <Gif
                 {...gif}
             />
+            <ButtonsRoundedNav
+                home={true}
+                favorites={true}/>
         </>
     )
 }

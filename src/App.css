@@ -36,10 +36,10 @@
 }
 
 .App-wrapper {
-	width: 100%;
-	max-width: 90rem;
-	margin: 0 auto;
-	padding: 0 0.5em;
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 0.5em;
 }
 
 .App-results {
@@ -52,12 +52,12 @@
   width: 100%;
 }
 
-@media screen and (min-width: 55rem){
-  .App-main{
+@media screen and (min-width: 55rem) {
+  .App-main {
     flex-direction: initial;
   }
 
-  .App-category{
+  .App-category {
     position: sticky;
     top: var(--search-size-mx-h);
     width: 40%;
@@ -87,4 +87,60 @@
 
 p.a:hover {
   background-color: var(--brand-color_1);
+}
+
+.buttons-rounded-nav {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+}
+
+.btn-rounded {
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  border: 2px solid var(--brand-color_3);
+  background-color: var(--theme-body-bg);
+  color: var(--brand-color_3);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--brand-color_3);
+}
+
+@media screen and (max-width: 520px) {
+  .buttons-rounded-nav {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .buttons-rounded-nav {
+    left: 15px;
+    bottom: 15px;
+  }
+  .btn-rounded {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 5px;
+  }
+}
+
+.btn-success:hover {
+  border-color: var(--brand-color_1);
+  color: var(--brand-color_1);
+  box-shadow: 0 0 10px var(--brand-color_1);
+}
+
+.btn-danger:hover {
+  border-color: var(--brand-color_7);
+  color: var(--brand-color_7);
+  box-shadow: 0 0 10px var(--brand-color_7);
 }

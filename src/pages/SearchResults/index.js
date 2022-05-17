@@ -9,6 +9,7 @@ import { useNearScreen } from "../../hooks/useNearScreen";
 import Spinner from "../../components/Spinner";
 import SearchForm from "../../components/SearchForm";
 import ListOfGifs from "../../components/ListOfGifs";
+import ButtonsRoundedNav from "../../components/ButtonsRoundedNav";
 
 const SearchResults = ({ params }) => {
 
@@ -56,6 +57,9 @@ const SearchResults = ({ params }) => {
                             gifs={gifs}
                         />
                         <div ref={externalRef} id="visor"></div>
+                        <ButtonsRoundedNav
+                            home={true}
+                            favorites={true}/>
                     </>
             }
         </>

@@ -1,0 +1,31 @@
+.gf-header {
+    display: flex;
+    gap: 10px;
+}
+
+.gf-header-fv {
+    background-color: var(--brand-color_3);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 10px var(--brand-color_3);
+}
+
+.gf-header-fv-total {
+    background-color: var(--brand-color_7);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 0 10px var(--brand-color_7); 
+}
+
+@media screen and (max-width: 350px) {
+    .gf-header-fv, .gf-header-fv-total {
+        font-size: 14px;
+        padding: 8px;
+    }
+  }

@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import Helmet from "react-helmet";
 
 import { useGifs } from "../../hooks/useGifs";
@@ -7,6 +7,7 @@ import SearchForm from "../../components/SearchForm";
 import Spinner from "../../components/Spinner"
 import ListOfGifs from "../../components/ListOfGifs";
 import TrendingSearches from "../../components/TrendingSearches/index";
+import ButtonsRoundedNav from "../../components/ButtonsRoundedNav";
 
 const Home = () => {
 
@@ -42,6 +43,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <ButtonsRoundedNav
+                favorites={true}/>
         </div>
     )
 }
